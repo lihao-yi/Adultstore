@@ -7,7 +7,7 @@
   <meta name="description" content="毛玻璃风格的精选商品展示平台" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- 装饰性背景光斑 -->
@@ -68,7 +68,7 @@
   <!-- 页脚 -->
   <footer class="glass footer">
     <p>琉璃商店 · 仅供商品展示 · 不涉及在线交易</p>
-    <p class="footer-meta">数据由后端 /api/products 提供</p>
+    <p class="footer-meta">数据由 data/products.json 提供 · 仅展示非交易</p>
   </footer>
 
   <!-- 商品详情模态 -->
@@ -77,7 +77,10 @@
     <article class="modal-card glass" id="modalCard">
       <button class="modal-close" data-close aria-label="关闭">×</button>
       <div class="modal-body">
-        <img id="modalImg" alt="" class="modal-img" />
+        <div class="modal-media">
+          <img id="modalImg" alt="" class="modal-img" />
+          <div id="modalThumbs" class="modal-thumbs"></div>
+        </div>
         <div class="modal-info">
           <span id="modalBadge" class="badge"></span>
           <h2 id="modalTitle">商品名称</h2>
@@ -93,6 +96,6 @@
     </article>
   </div>
 
-  <script src="/js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

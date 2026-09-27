@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 3000;
 // 中间件
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// 静态资源位于仓库根目录（与 GitHub Pages 结构保持一致）
+app.use(express.static(__dirname));
 
 // 加载商品数据
 let products = [];
@@ -81,7 +82,7 @@ app.get('/api/health', (req, res) => {
 
 // 所有其他路由回退到首页（支持前端路由）
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // 启动服务
