@@ -1,0 +1,17 @@
+{
+  "name": "product-display",
+  "version": "1.0.0",
+  "description": "毛玻璃风格商品展示前后端项目",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

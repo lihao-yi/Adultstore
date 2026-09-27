@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>琉璃商店 · 精选商品展示</title>
+  <meta name="description" content="毛玻璃风格的精选商品展示平台" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- 装饰性背景光斑 -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- 顶部导航（毛玻璃） -->
+  <header class="glass nav">
+    <div class="nav-brand">
+      <span class="brand-mark">琉璃</span>
+      <span class="brand-name">LIULI Store</span>
+    </div>
+    <nav class="nav-categories" id="categories">
+      <button class="chip chip-active" data-category="全部">全部</button>
+    </nav>
+    <div class="nav-search">
+      <input id="searchInput" type="search" placeholder="搜索商品…" aria-label="搜索商品" />
+    </div>
+  </header>
+
+  <!-- 主视觉横幅 -->
+  <section class="hero glass">
+    <div class="hero-text">
+      <h1>精选好物 · 琉璃呈现</h1>
+      <p>从数码、服饰到家居精品，每一件都值得品味。</p>
+      <span class="hero-meta">共 <strong id="totalCount">0</strong> 件商品 · 仅展示，非交易</span>
+    </div>
+  </section>
+
+  <!-- 商品网格 -->
+  <main class="container">
+    <div id="productGrid" class="grid" aria-live="polite">
+      <!-- 骨架屏，由 JS 替换 -->
+      <div class="card skeleton" aria-hidden="true">
+        <div class="skeleton-img"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+      <div class="card skeleton" aria-hidden="true">
+        <div class="skeleton-img"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+      <div class="card skeleton" aria-hidden="true">
+        <div class="skeleton-img"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+    <div id="emptyState" class="empty-state" hidden>
+      <p>没有找到匹配的商品 🍃</p>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="glass footer">
+    <p>琉璃商店 · 仅供商品展示 · 不涉及在线交易</p>
+    <p class="footer-meta">数据由后端 /api/products 提供</p>
+  </footer>
+
+  <!-- 商品详情模态 -->
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card glass" id="modalCard">
+      <button class="modal-close" data-close aria-label="关闭">×</button>
+      <div class="modal-body">
+        <img id="modalImg" alt="" class="modal-img" />
+        <div class="modal-info">
+          <span id="modalBadge" class="badge"></span>
+          <h2 id="modalTitle">商品名称</h2>
+          <p id="modalCategory" class="modal-category"></p>
+          <p id="modalDesc" class="modal-desc"></p>
+          <div class="modal-price">
+            <span id="modalPrice" class="price-now"></span>
+            <span id="modalOrigin" class="price-origin"></span>
+          </div>
+          <p id="modalStock" class="modal-stock"></p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
